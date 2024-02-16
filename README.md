@@ -1,7 +1,10 @@
 # MOSS
 ![image](https://github.com/saiccoumar/MOSS/assets/55699636/6c05ac01-6969-4f7f-adec-0fc80f3c372a)
 by Sai Coumar
-Welcome to my implementation of MOSS from scratch in python! MOSS, known as Measure of Similarity Software, is a tool that is used to detect plagiarism; it's often used to compare code similarity in computer science education and has been used for decades. This was done as an exercise to understand how MOSS works. In reality, MOSS can be used as a tool with relative ease and re-implemenatation is completely unnecessary - which is why reimplementations aren't very common. It's also important to note certain functions, like the hashing and text preprocessing, are done with proprietary hashing functions and tailored to specific programming languages. If you ever have to use MOSS, purchase the binary from Alex Aiken or look up integration yourself here: https://theory.stanford.edu/~aiken/moss/. 
+
+Welcome to my implementation of MOSS from scratch in python! MOSS, known as Measure of Similarity Software, is a tool that is used to detect plagiarism; it's often used to compare code similarity in computer science education and has been used for decades. This was done as an exercise to understand how MOSS works. In reality, MOSS can be used as a tool with relative ease and re-implemenatation is completely unnecessary - which is why reimplementations aren't very common.
+
+It's also important to note certain functions, like the hashing and text preprocessing, are done with proprietary hashing functions and tailored to specific programming languages. If you ever have to use MOSS, purchase the binary from Alex Aiken or look up integration yourself here: https://theory.stanford.edu/~aiken/moss/. 
 ## Usage:
 ```
 python moss.py <path_to_python_file> <path_to_copied_python_file>
@@ -9,6 +12,12 @@ python moss.py <path_to_python_file> <path_to_copied_python_file>
 
 ## MOSS Explained:
 MOSS works by creating fingerprints for code and then checking the similarity between the fingerprints. There are many similarity algorithms, and naively you can check character by character, but fingerprinting has good results and can defend against some simple adversarial techniques like variable renaming. 
+
+
+
+<p align="center">
+ <img size="100%" src="https://github.com/saiccoumar/MOSS/assets/55699636/6aca261b-5d95-4c37-adbe-81d4305057e3">
+</p>
 
 ### Preprocessing:
 The first step in MOSS is preprocessing the raw text. This is done by lowercasing all the text, replacing literals and language specific keywords, comments, replacing variables with placeholders, and removing whitespaces/newlines. It's better to avoid using simple one-character variable names. For my implementation I used vari where i is the ith variable to be instantiated/used in the code. Note that my MOSS will only work well on python because I specifically preprocessed python keywords and literals. Different preprocessing must be used with different languages. 
