@@ -62,7 +62,7 @@ def submission_preprocessing(content):
     - Cleaned string that can be used for tokenization
 
     Example: 
-        A do run run run, a do run run -> ☺☻♥♥♥,☺☻♥♥
+        A do run run run, a do run run -> var1var2var3var3var3,var1var2var3var3
 
     Unlike the original stanford paper example, this code is 
     tailored to python code and replaces unique words with placeholders in the same order
@@ -177,7 +177,7 @@ def winnowing(hashed_tokens,k=5, t=8):
     - Input:
     - 77 72 42 17 98 50 17 98 8 88 67 39 77 72 42 17 98 
     - Output:
-    - [17,3] [17,6] [8,8] [39,11] [17,15]
+    - [[17,3] [17,6] [8,8] [39,11] [17,15]]
     """
     w = t - k + 1
     w = 8
